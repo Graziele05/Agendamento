@@ -1,5 +1,10 @@
-import { render } from 'preact'
-import { App } from './app.jsx'
-import './index.css'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Home from './Home.jsx';
 
-render(<App />, document.getElementById('app'))
+ReactDOM.render(
+  <React.StrictMode>
+    <Home />
+  </React.StrictMode>,
+  document.getElementById('root')
+);

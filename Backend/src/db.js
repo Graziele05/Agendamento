@@ -1,10 +1,10 @@
-const mysql = require('mysql2');
+import mysql from 'mysql';
 
 
 const db = mysql.createConnection({
   host: 'localhost', 
   user: 'root',   
-  password: '', 
+  password: 'password', 
   database: 'vale_gas'
 });
 
@@ -17,4 +17,4 @@ db.connect((err) => {
   console.log('Conexão bem-sucedida ao banco de dados!');
 });
 
-module.exports = db;
+export default db;
