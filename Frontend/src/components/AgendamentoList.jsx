@@ -12,7 +12,7 @@ const AgendamentoList = () => {
 
   const fetchAgendamentos = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/agendamentos-vale-gas');
+      const response = await axios.get('http://localhost:3000/agendamentos');
       setAgendamentos(response.data);
     } catch (error) {
       alert('Erro ao buscar cadastros.');
@@ -21,7 +21,7 @@ const AgendamentoList = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/agendamentos-vale-gas/${id}`);
+      await axios.delete(`http://localhost:3000/agendamentos/${id}`);
       setAgendamentos(agendamentos.filter((agendamento) => agendamento.id_agendamento !== id));
       alert('Cadastro deletado com sucesso!');
     } catch (error) {

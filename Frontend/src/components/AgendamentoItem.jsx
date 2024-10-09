@@ -1,4 +1,4 @@
-// src/components/AgendamentoItem.js
+
 import React, { useState } from 'react';
 import axios from 'axios';
 
@@ -12,7 +12,7 @@ const AgendamentoItem = ({ agendamento, onDelete, onUpdate }) => {
 
   const handleSave = async () => {
     try {
-      await axios.put(`http://localhost:3000/agendamentos-vale-gas/${agendamento.id_agendamento}`, agendamentoAtualizado);
+      await axios.put(`http://localhost:3000/agendamentos/${agendamento.id_agendamento}`, agendamentoAtualizado);
       onUpdate(agendamentoAtualizado);
       setEditando(false);
       alert('Cadastro atualizado com sucesso!');

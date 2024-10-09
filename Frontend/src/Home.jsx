@@ -3,12 +3,15 @@ import Topo from './Topo';
 import Rodape from './Rodape';
 import AgendamentoForm from './components/AgendamentoForm';
 
+
 const App = () => {
   return (
-    <div>
-      <Topo />
-      <Rodape />
-    </div>
+    <div >
+      <body>
+        <Topo />
+        <AgendamentoForm/>
+        <Rodape />
+      </body></div>
   );
 };
 

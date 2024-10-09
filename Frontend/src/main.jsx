@@ -1,10 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Home from './Home.jsx';
+import { BrowserRouter } from 'react-router-dom';
+import Home from './Home'; 
 
 ReactDOM.render(
   <React.StrictMode>
-    <Home />
+    <BrowserRouter>
+      <Home />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

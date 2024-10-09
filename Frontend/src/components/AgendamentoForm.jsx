@@ -13,12 +13,12 @@ const AgendamentoForm = () => {
     local_retirada: ''
   });
 
-  const API_URL = 'http://localhost:3000/agendamentos'; // URL para as rotas
+  const API_URL = 'http://localhost:3000/agendamentos';
 
   // Função para buscar todos os agendamentos
   const fetchAgendamentos = async () => {
     try {
-      const response = await axios.get(API_URL); // Corrigido para o endpoint correto
+      const response = await axios.get(API_URL);
       setAgendamentos(response.data);
     } catch (error) {
       alert('Erro ao buscar agendamentos: ' + error.message);
@@ -37,11 +37,9 @@ const AgendamentoForm = () => {
     e.preventDefault();
     try {
       if (agendamento.id_agendamento) {
-        // Atualizar agendamento
         await axios.put(`${API_URL}/${agendamento.id_agendamento}`, agendamento);
         alert('Agendamento atualizado com sucesso!');
       } else {
-        // Criar novo agendamento
         await axios.post(API_URL, agendamento);
         alert('Cadastro criado com sucesso!');
       }
@@ -123,14 +121,14 @@ const AgendamentoForm = () => {
         />
         <button type="submit">{agendamento.id_agendamento ? 'Atualizar Cadastro' : 'Criar Cadastro'}</button>
       </form>
-
+<hr />
       <h2>Agendamentos</h2>
       <ul>
         {agendamentos.map((agendamento) => (
           <li key={agendamento.id_agendamento}>
             {`${agendamento.nome_pessoa} - ${agendamento.contato_telefonico}`}
-            <button onClick={() => handleEdit(agendamento)}>Editar</button>
-            <button onClick={() => handleDelete(agendamento.id_agendamento)}>Excluir</button>
+            <button className='edits' onClick={() => handleEdit(agendamento)}>Editar</button>
+            <button className='edits' onClick={() => handleDelete(agendamento.id_agendamento)}>Excluir</button>
           </li>
         ))}
       </ul>
